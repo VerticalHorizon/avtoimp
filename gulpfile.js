@@ -5,18 +5,7 @@ var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
-var pkg = require('./package.json');
 
-// Compile LESS files from /less into /css
-gulp.task('less', function() {
-    return gulp.src('less/grayscale.less')
-        .pipe(less())
-        .pipe(header(banner, { pkg: pkg }))
-        .pipe(gulp.dest('css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
-});
 
 // Minify compiled CSS
 // sass
@@ -67,7 +56,7 @@ gulp.task('copy', function() {
             '!node_modules/font-awesome/*.json'
         ])
         .pipe(gulp.dest('vendor/font-awesome'))
-})
+});
 
 // Run everything
 gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
@@ -77,9 +66,9 @@ gulp.task('browserSync', function() {
     browserSync.init({
         server: {
             baseDir: ''
-        },
+        }
     })
-})
+});
 
 // Dev task with browserSync
 gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {

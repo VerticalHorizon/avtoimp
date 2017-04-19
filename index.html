@@ -27,79 +27,120 @@
     <![endif]-->
   </head>
   <body>
+    <nav class="navbar navbar-custom">
+      <div class="container">
+        <div class="row">
+          <div class="navbar-header col-sm-4">
+            <a class="navbar-brand page-scroll" href="#page-top">
+              <i class="fa fa-automobile"></i> АвтоДискаунтер
+            </a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="contacts col-sm-8">
+            <div class="row">
+              <div class="col-sm-4">
+                <i class="glyphicon glyphicon-phone"></i> Звоните
+                <br><span class="dd">+79260790621</span>
+              </div>
+              <div class="col-sm-4">
+                <i class="glyphicon glyphicon-envelope"></i> Напишите
+                <br><a href="maitlo:0790621@mail.ru" class="dd">0790621@mail.ru</a>
+              </div>
+              <div class="col-sm-4">
+                <button class="btn btn-danger">Перезвонить</button>
+              </div>
+            </div>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+      </div>
+    </nav>
     <header class="intro">
       <div class="intro-body">
         <div class="container">
           <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-              <div class="row board">
-                <div class="col-md-6">
+            <div class="col-md-10 col-md-offset-1">
+              <h1 class="slogan">Просто оставьте заявку!</h1>
+
+              <div class="row">
+                <div class="col-md-8">
                       <form>
-                  <div class="panel panel-success">
+                  <div class="panel panel-danger">
                     <div class="panel-heading">
-                      <h4>Просто оставьте заявку!</h4>
+                      <h4>Отправьте запрос и получите ответ</h4>
                     </div>
                     <div class="panel-body">
-                        <div class="form-group">
-                          <input type="text" class="form-control" id="car_brand" placeholder="Марка автомобиля" required autofocus>
-                        </div>
 
                         <div class="row">
                           <div class="col-md-6">
+
                             <div class="form-group">
-                              <input type="text" class="form-control" id="car_model" placeholder="Модель" required>
+                              <input type="text" class="form-control" id="car_brand" placeholder="Марка автомобиля" autofocus>
+                            </div>
+
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="name" placeholder="Ваше имя">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="phone" placeholder="Ваш номер телефона" required>
+                            </div>
+                            <div class="form-group">
+                              <input type="email" class="form-control" id="email" placeholder="Ваш E-mail">
+                            </div>
+
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox"> Новые з/ч
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox"> БУ з/ч
+                              </label>
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <div class="form-group">
-                              <input type="text" class="form-control" id="car_year" placeholder="Год выпуска" required>
+
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" id="car_model" placeholder="Модель">
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" id="car_year" placeholder="Год выпуска">
+                                </div>
+                              </div>
                             </div>
+
+
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="car_vin" placeholder="VIN">
+                            </div>
+
+                            <div class="form-group">
+                              <textarea class="form-control" id="description" rows="6" placeholder="Какие запчасти Вам нужны?"></textarea>
+                            </div>
+
                           </div>
                         </div>
 
-
-                        <div class="form-group">
-                          <input type="text" class="form-control" id="car_vin" placeholder="VIN" required>
-                        </div>
-
-                        <div class="form-group">
-                          <input type="text" class="form-control" id="name" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="form-group">
-                          <input type="email" class="form-control" id="email" placeholder="Ваш E-mail" required>
-                        </div>
-                        <div class="form-group">
-                          <input type="text" class="form-control" id="phone" placeholder="Ваш номер телефона" required>
-                        </div>
-
-                        <div class="form-group">
-                          <textarea class="form-control" id="description" rows="4" placeholder="Какие запчасти Вам нужны?"></textarea>
-                        </div>
                     </div>
                     <div class="panel-footer">
-                      <button type="submit" class="btn btn-success pull-right">Отправить запрос</button>
+                      <button type="submit" class="btn btn-danger pull-right">Отправить запрос</button>
                       <div class="clearfix"></div>
                     </div>
                   </div> <!-- /panel-success -->
                       </form>
                 </div>
-                <div class="col-md-6">
-<address>
-  <strong>Twitter, Inc.</strong><br>
-  1355 Market Street, Suite 900<br>
-  San Francisco, CA 94103<br>
-  <abbr title="Phone">P:</abbr> (123) 456-7890
-</address>
-
-<address>
-  <strong>Full Name</strong><br>
-  <a href="mailto:#">first.last@example.com</a>
-</address>
-<div id="vk_group"></div>
-<script src="https://vk.com/js/api/openapi.js?143" type="text/javascript"></script>
-<script type="text/javascript">
-VK.Widgets.Group("vk_group", {mode: 0, width: "auto"}, 1);
-</script>
+                <div class="col-md-4">
+                  <div id="vk_group"></div>
+                  <script src="https://vk.com/js/api/openapi.js?143" type="text/javascript"></script>
+                  <script type="text/javascript">
+                  VK.Widgets.Group("vk_group", {mode: 0, width: "auto", height: "auto"}, 1);
+                  </script>
                 </div>
               </div>
             </div> 
@@ -107,6 +148,22 @@ VK.Widgets.Group("vk_group", {mode: 0, width: "auto"}, 1);
         </div>
       </div>
     </header>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="text-muted">ИП Грицков Д.В.<br>ИНН 324108462626</div>
+          </div>
+          <div class="col-sm-3">
+            <div class="text-muted">Адрес:<br>Москва, Пресненская набережная 16А</div>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" class="pull-right dev"><i class="glyphicon glyphicon-wrench"></i> Karellens</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.js"></script>
