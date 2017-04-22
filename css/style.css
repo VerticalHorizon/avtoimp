@@ -73,6 +73,9 @@ html {
   color: white;
   margin-bottom: 40px; }
 
+.alert {
+  text-align: left; }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -87,6 +90,7 @@ html {
   .footer .dev {
     color: #23527c;
     text-decoration: none;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-family: Arial; }
     .footer .dev i {
       color: #f95372; }

@@ -110,6 +110,10 @@ html {
     margin-bottom: 40px;
 }
 
+.alert {
+    text-align: left;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -130,6 +134,7 @@ html {
         color: #23527c;
         text-decoration: none;
         text-transform: uppercase;
+        font-family: Arial;
 
         i {
             color: #f95372;

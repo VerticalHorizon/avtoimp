@@ -1,7 +1,6 @@
 <?php
 require('config.php');
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -37,7 +36,11 @@ require('config.php');
                                         <!-- Intro -->
                                         <?php foreach ($order_data as $key => $line): ?>
                                             <p>
-                                                <b><?php echo $fields[$key]; ?></b>: <?php echo strip_tags($line); ?>
+                                                <?php if($line === '1' || $line === '0'): ?>
+                                                <b><?php echo $fields[$key]["title"]; ?></b>
+                                                <?php else: ?>
+                                                <b><?php echo $fields[$key]["title"]; ?></b>: <?php echo strip_tags($line); ?>
+                                                <?php endif; ?>
                                             </p>
                                         <?php endforeach; ?>
 

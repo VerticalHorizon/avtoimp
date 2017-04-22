@@ -1,5 +1,6 @@
 <?php
 require_once('config.php');
+require ('Validator.php');
 
 function render($file, $scope_data){
     ob_start();
@@ -8,9 +9,33 @@ function render($file, $scope_data){
     return ob_get_clean();
 }
 
-$sd['order_data'] = $_POST;
-// than validate
+if($_POST) {
+    $sd['order_data'] = $_POST;
+    $validator = new Validator($fields);
+    $res = $validator->validate($sd['order_data']);
 
-mail($to, $subject, render('email.blade.php', $sd), $headers);
+    if($res) {      // if validation errors
+        $_SESSION['flash_data'] = [
+            'type'      => 'danger',
+            'message'   => $res,
+        ];
+    } else {
+        $sended = mail($to, $subject, render('email.blade.php', $sd), $headers);
+
+        if($sended) {   // if succesful sended
+            $_SESSION['flash_data'] = [
+                'type'      => 'success',
+                'message'   => 'Ваш запрос успешно отправлен!',
+            ];
+        } else {
+            $_SESSION['flash_data'] = [
+                'type'      => 'danger',
+                'message'   => 'При отправке произошла ошибка!',
+            ];
+        }
+    }
+}
 
 header('Location: /');
+
+
