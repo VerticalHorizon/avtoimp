@@ -1,8 +1,13 @@
+$btn-warning-color: hsl(46, 97%, 50%);
+$footer-header-color: #222;
+$base-color: #d8d8d8;
+
 body {
     width: 100%;
     height: 100%;
     font-family: "Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #4C4C4C;
+    color: $base-color;
+    background-color: $footer-header-color;
 }
 
 html {
@@ -10,13 +15,13 @@ html {
     position: relative;
 
     @media(min-width:768px) {
-        height: 100%;
+        min-height: 100%;
     }
 }
 
 .navbar {
-    background-color: white;
     margin: 0;
+    background-color: $footer-header-color;
 
     .navbar-header {
         padding: 30px 15px;
@@ -28,6 +33,11 @@ html {
 
             img {
                 height: 100%;
+            }
+
+            div {
+                font-size: 0.5em;
+                letter-spacing: 0.6em;
             }
         }
     }
@@ -41,21 +51,34 @@ html {
                 > .glyphicon, .glyphicon-set {
                     float: left;
                     margin-right: 10px;
+
+                    .fa-viber {
+                        color: #675ca8;
+                    }
+
+                    .fa-whatsapp {
+                        color: #00e676;
+                    }
                 }
 
                 > .glyphicon {
-                    font-size: 3em;
+                    font-size: 3.6em;
                 }
 
                 > .glyphicon-set .glyphicon, .glyphicon-set .fa{
                     display: block;
-                    font-size: 1.1em;
+                    font-size: 1.6em;
                     margin-bottom: 1px;
+                }
+
+                @media(max-width:767px) {
+                    padding: 30px;
+                    font-size: 1.4em;
                 }
             }
 
             .dd, button {
-                font-size: 1.2em;
+                font-size: 1.5em;
                 font-weight: bold;
             }
         }
@@ -96,8 +119,8 @@ html {
     }
 
     @media ( min-width: 991px ) {
-        padding: 0;
-        height: calc(100% - 127px);
+        padding: 70px 0 130px 0;
+        height: calc(100% - 142px);
     }
 
     .panel-body {
@@ -118,11 +141,10 @@ html {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: auto ;
-    background-color: #f5f5f5;
+    height: auto;
+    background-color: $footer-header-color;
 
     @media ( max-width: 991px ) {
-
         position: static;
     }
 
@@ -131,7 +153,7 @@ html {
     }
 
     .dev {
-        color: #23527c;
+        //color: #23527c;
         text-decoration: none;
         text-transform: uppercase;
         font-family: Arial;
@@ -142,9 +164,34 @@ html {
     }
 }
 
-//.btn-warning {
-//    color: #fff;
-//    background-color: #ffea00;
-//    border-color: #fddc02;
-//    text-shadow: 0px 0px 2px #999999;
-//}
+.btn-warning {
+    background-color: $btn-warning-color;
+    border-color: darken($btn-warning-color, 5%);
+
+    &:hover {
+        background-color: darken($btn-warning-color, 10%);
+        border-color: darken($btn-warning-color, 17%);
+    }
+
+    &.focus, &:focus {
+        background-color: darken($btn-warning-color, 10%);
+        border-color: darken($btn-warning-color, 30%);
+    }
+
+    &.active, &:active {
+        background-color: darken($btn-warning-color, 10%);
+        border-color: darken($btn-warning-color, 17%);
+    }
+}
+
+.text-muted {
+    color: darken($base-color, 17%);
+}
+
+.popover {
+    max-width: 400px;
+
+    .popover-title {
+        color: $footer-header-color;
+    }
+}

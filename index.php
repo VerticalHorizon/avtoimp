@@ -43,6 +43,7 @@ if( isset($_SESSION['flash_data']) && count($_SESSION['flash_data']) ) {
           <div class="navbar-header col-sm-4">
             <a class="navbar-brand" href="/">
               <img src="/img/logo.png" alt="Автодискаунтер">
+              <div>Автодискаунтер</div>
             </a>
           </div>
 
@@ -53,7 +54,6 @@ if( isset($_SESSION['flash_data']) && count($_SESSION['flash_data']) ) {
                 <div class="glyphicon-set">
                   <i class="fa fa-viber"></i>
                   <i class="fa fa-whatsapp"></i>
-                  <i class="fa fa-telegram"></i>
                 </div> Звоните
                 <br><span class="dd">+79260790621</span>
               </div>
@@ -62,7 +62,18 @@ if( isset($_SESSION['flash_data']) && count($_SESSION['flash_data']) ) {
                 <br><a href="maitlo:0790621@mail.ru" class="dd">0790621@mail.ru</a>
               </div>
               <div class="col-sm-4">
-                <button class="btn btn-warning">Перезвонить</button>
+                <button type="button" class="btn btn-warning" id="callback">Перезвонить</button>
+                <div class="hide" id="callback-content">
+                    <form action="callback.php" method="post" class="form-inline">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">+7</div>
+                                <input type="text" name="phone" class="form-control" required maxlength="12" placeholder="Телефон">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i></button>
+                    </form>
+                </div>
               </div>
             </div>
           </div>
@@ -75,7 +86,7 @@ if( isset($_SESSION['flash_data']) && count($_SESSION['flash_data']) ) {
         <div class="container">
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <h1 class="slogan">Продажа автозапчастей с доставкой по Москве. НОВЫЕ запчасти - в наличии. Б/У запчасти - в наличии и под заказ.</h1>
+                <h2 class="slogan">Продажа новых и б/у автозапчастей с доставкой по Москве.</h2>
 
                 <?php if($flash): ?>
                 <div class="alert alert-<?php echo $flash['type']; ?> alert-dismissible" role="alert">
@@ -196,11 +207,23 @@ if( isset($_SESSION['flash_data']) && count($_SESSION['flash_data']) ) {
     </footer>
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>
+    <script src="/vendor/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            var options = {
+                content: $('#callback-content').html(),
+                title: 'Перезвоните мне',
+                html: true,
+                placement: 'bottom',
+                container: 'body'
+            };
+
+            $('#callback').popover(options);
+        });
+    </script>
   </body>
 </html>

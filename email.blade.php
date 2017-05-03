@@ -38,6 +38,8 @@ require('config.php');
                                             <p>
                                                 <?php if($line === '1' || $line === '0'): ?>
                                                 <b><?php echo $fields[$key]["title"]; ?></b>
+                                                <?php elseif($key === 'phone'): ?>
+                                                <b><?php echo $fields[$key]["title"]; ?></b>: +7<?php echo strip_tags($line); ?>
                                                 <?php else: ?>
                                                 <b><?php echo $fields[$key]["title"]; ?></b>: <?php echo strip_tags($line); ?>
                                                 <?php endif; ?>
