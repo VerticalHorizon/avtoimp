@@ -59,7 +59,7 @@ if( isset($_SESSION['flash_data']) && count($_SESSION['flash_data']) ) {
               </div>
               <div class="col-sm-4">
                 <i class="glyphicon glyphicon-envelope"></i> Пишите
-                <br><a href="maitlo:0790621@mail.ru" class="dd">0790621@mail.ru</a>
+                <br><a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#048;&#055;&#057;&#048;&#054;&#050;&#049;&#064;&#109;&#097;&#105;&#108;&#046;&#114;&#117;" class="dd">&#048;&#055;&#057;&#048;&#054;&#050;&#049;&#064;&#109;&#097;&#105;&#108;&#046;&#114;&#117;</a>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="btn btn-warning" id="callback">Перезвонить</button>
@@ -162,6 +162,8 @@ if( isset($_SESSION['flash_data']) && count($_SESSION['flash_data']) ) {
                                           </label>
                                         </div>
 
+                                        <div class="g-recaptcha" data-sitekey="6Lebxx8UAAAAAHQr2BJQNE0LdkEfJyO2ZsNeqbxx"></div>
+
                                       </div>
                                     </div>
 
@@ -205,6 +207,9 @@ if( isset($_SESSION['flash_data']) && count($_SESSION['flash_data']) ) {
         </div>
       </div>
     </footer>
+
+    <!--  reCaptcha  -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <!-- jQuery -->
     <script src="/vendor/jquery/jquery.js"></script>

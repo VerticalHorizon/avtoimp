@@ -126,3 +126,7 @@ html {
   max-width: 400px; }
   .popover .popover-title {
     color: #222; }
+
+.g-recaptcha {
+  transform: scale(0.9);
+  transform-origin: 0 0; }
