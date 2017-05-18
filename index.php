@@ -68,7 +68,7 @@ if( isset($_SESSION['flash_data']) && count($_SESSION['flash_data']) ) {
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-addon">+7</div>
-                                <input type="text" name="phone" class="form-control" required maxlength="12" placeholder="Телефон">
+                                <input type="text" name="phone" class="form-control" required maxlength="10" placeholder="Телефон">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i></button>
@@ -139,7 +139,7 @@ if( isset($_SESSION['flash_data']) && count($_SESSION['flash_data']) ) {
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon">+7</div>
-                                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Ваш номер телефона" required maxlength="12">
+                                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Ваш номер телефона" required maxlength="10">
                                             </div>
                                         </div>
                                         <div class="form-group">

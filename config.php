@@ -10,6 +10,7 @@ session_start();
 $app_name       = 'Автодискаунтер';
 $to         = '0790621@mail.ru';
 $subject    = 'Новый заказ!';
+$subject2   = 'Клиент просит перезвонить!';
 
 //$headers = "From: " . strip_tags($_POST['req-email']) . "\r\n";
 //$headers .= "Reply-To: ". strip_tags($_POST['req-email']) . "\r\n";

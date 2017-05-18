@@ -33,7 +33,7 @@ if ($_POST && isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptch
                 'message'   => $res,
             ];
         } else {
-            $sended = mail($to, $subject, render('email.blade.php', $sd), $headers);
+            $sended = mail($to, $subject, render('order.template.php', $sd), $headers);
 
             if($sended) {   // if succesful sended
                 $_SESSION['flash_data'] = [
@@ -53,6 +53,11 @@ if ($_POST && isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptch
             'message'   => 'Подтвердите что вы не робот!',
         ];
     }
+} else {
+    $_SESSION['flash_data'] = [
+        'type'      => 'danger',
+        'message'   => 'Подтвердите что вы не робот!',
+    ];
 }
 
 header('Location: /');

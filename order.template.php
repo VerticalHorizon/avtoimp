@@ -30,18 +30,14 @@ require('config.php');
                                     <td>
                                         <!-- Greeting -->
                                         <h1>
-                                            Новый заказ!
+                                            <?php echo $subject; ?>
                                         </h1>
 
                                         <!-- Intro -->
                                         <?php foreach ($order_data as $key => $line): ?>
                                             <p>
-                                                <?php if($line === '1' || $line === '0'): ?>
-                                                <b><?php echo $fields[$key]["title"]; ?></b>
-                                                <?php elseif($key === 'phone'): ?>
+                                                <?php if($key === 'phone'): ?>
                                                 <b><?php echo $fields[$key]["title"]; ?></b>: +7<?php echo strip_tags($line); ?>
-                                                <?php else: ?>
-                                                <b><?php echo $fields[$key]["title"]; ?></b>: <?php echo strip_tags($line); ?>
                                                 <?php endif; ?>
                                             </p>
                                         <?php endforeach; ?>
