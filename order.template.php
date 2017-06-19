@@ -36,11 +36,16 @@ require('config.php');
                                         <!-- Intro -->
                                         <?php foreach ($order_data as $key => $line): ?>
                                             <p>
-                                                <?php if($key === 'phone'): ?>
-                                                <b><?php echo $fields[$key]["title"]; ?></b>: +7<?php echo strip_tags($line); ?>
+                                                <?php if($line === '1' || $line === '0'): ?>
+                                                    <b><?php echo $fields[$key]["title"]; ?></b>
+                                                <?php elseif($key === 'phone'): ?>
+                                                    <b><?php echo $fields[$key]["title"]; ?></b>: +7<?php echo strip_tags($line); ?>
+                                                <?php elseif(isset($fields[$key])): ?>
+                                                    <b><?php echo $fields[$key]["title"]; ?></b>: <?php echo strip_tags($line); ?>
                                                 <?php endif; ?>
                                             </p>
                                         <?php endforeach; ?>
+
 
                                     </td>
                                 </tr>
